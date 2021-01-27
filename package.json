@@ -10,7 +10,7 @@
 		"style": "prettier --write package.json '**/*{.ts,.tsx,.js,.jsx,.json,.html,.css,.scss,.sass,.yaml,.yml,.md}'",
 		"style:ci": "prettier --list-different package.json '**/*{.ts,.tsx,.js,.jsx,.json,.html,.css,.scss,.sass,.yaml,.yml,.md}'",
 		"build:docs": "dita -i docs/index.ditamap -f pdf2",
-		"prepare": "npm run style && npm run build",
+		"prepare": "npm run build",
 		"release": "standard-version"
 	},
 	"repository": {
