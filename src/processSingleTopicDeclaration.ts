@@ -2,11 +2,13 @@ import { CreateFileFunction, ModuleTreeNode } from 'fliegdoc';
 import { render } from './render';
 import path from 'path';
 import { processDocs } from './processDocs';
+import { convertID } from './convertID';
 
 export async function processSingleTopicDeclaration(
 	v: Record<string, unknown> & { name: string; declarations: ModuleTreeNode[] },
 	moduleDocsFolder: string,
-	createFile: CreateFileFunction
+	createFile: CreateFileFunction,
+	namespaceName: string
 ): Promise<{ type: 'topic'; url: string }> {
 	const url = `./members/${v.name}/index.dita`;
 	const declaration = v.declarations[0];
@@ -70,7 +72,8 @@ export async function processSingleTopicDeclaration(
 		{
 			declaration: internalDeclaration,
 			description,
-			docTags
+			docTags,
+			id: convertID(`${namespaceName}.${v.name}`)
 		},
 		path.join(moduleDocsFolder, url),
 		createFile

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
-<reference>
+<reference id="<%=it.id%>">
     <title><codeph>type <%= it.declaration.name %>
 <% ~ includeFile('type-params', {typeParameters: it.declaration.typeParameters}) %>
 </codeph></title>

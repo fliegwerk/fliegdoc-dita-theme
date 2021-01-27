@@ -3,11 +3,13 @@ import path from 'path';
 import { render } from './render';
 import { processSingleTopicDeclaration } from './processSingleTopicDeclaration';
 import { processDocs } from './processDocs';
+import { convertID } from './convertID';
 
 export async function processClasslike(
 	moduleDocsFolder: string,
 	v: Record<string, unknown> & { name: string; declarations: ModuleTreeNode[] },
-	createFile: CreateFileFunction
+	createFile: CreateFileFunction,
+	namespaceName: string
 ): Promise<{ type: 'map'; url: string }> {
 	const declaration = v.declarations[0];
 	const classDocsPath = path.join(
@@ -35,7 +37,8 @@ export async function processClasslike(
 					]
 				},
 				classDocsPath,
-				createFile
+				createFile,
+				`${namespaceName}.${v.name}`
 			)
 		)
 	);
@@ -55,7 +58,8 @@ export async function processClasslike(
 					]
 				},
 				classDocsPath,
-				createFile
+				createFile,
+				`${namespaceName}.${v.name}`
 			)
 		)
 	);
@@ -75,7 +79,8 @@ export async function processClasslike(
 					]
 				},
 				classDocsPath,
-				createFile
+				createFile,
+				`${namespaceName}.${v.name}`
 			)
 		)
 	);
@@ -128,7 +133,8 @@ export async function processClasslike(
 			declaration: declaration,
 			properties: propertyLinks,
 			methods: methodLinks,
-			constructors: ctorLinks
+			constructors: ctorLinks,
+			id: convertID(`${namespaceName}.${v.name}@map`)
 		},
 		mapPath,
 		createFile
@@ -139,7 +145,8 @@ export async function processClasslike(
 			declaration: declaration,
 			signature,
 			description,
-			docTags
+			docTags,
+			id: convertID(`${namespaceName}.${v.name}`)
 		},
 		path.join(classDocsPath, 'intro.dita'),
 		createFile
@@ -147,6 +154,8 @@ export async function processClasslike(
 
 	return {
 		type: 'map',
-		url: path.join('./', 'members', declaration.name, 'index.ditamap')
+		url: path
+			.join('./', 'members', declaration.name, 'index.ditamap')
+			.replace(/\\/g, '/')
 	};
 }

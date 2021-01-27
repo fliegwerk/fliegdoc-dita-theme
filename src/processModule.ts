@@ -3,6 +3,7 @@ import path from 'path';
 import { render } from './render';
 import { processSingleTopicDeclaration } from './processSingleTopicDeclaration';
 import { processClasslike } from './processClasslike';
+import { convertID } from './convertID';
 
 export async function processModule({
 	createFile,
@@ -21,7 +22,8 @@ export async function processModule({
 	const memberRefs = await processModuleMembers(
 		exportedMembers,
 		moduleDocsFolder,
-		createFile
+		createFile,
+		moduleName
 	);
 
 	const moduleMapPath = path.join(
@@ -34,14 +36,15 @@ export async function processModule({
 		'template/modules/module/index.ditamap',
 		{
 			members: memberRefs,
-			moduleName
+			moduleName,
+			id: convertID(`${moduleName}@map`)
 		},
 		moduleMapPath,
 		createFile
 	);
 	await render(
 		'template/modules/module/intro.dita',
-		{ moduleName },
+		{ moduleName, id: convertID(`${moduleName}`) },
 		path.join(config.outDir, 'modules', moduleName, `intro.dita`),
 		createFile
 	);
@@ -52,7 +55,8 @@ export async function processModule({
 async function processModuleMembers(
 	exportedMembers: ModuleTree,
 	moduleDocsFolder: string,
-	createFile: CreateFileFunction
+	createFile: CreateFileFunction,
+	moduleName: string
 ) {
 	return (
 		await Promise.all(
@@ -68,14 +72,20 @@ async function processModuleMembers(
 						return processSingleTopicDeclaration(
 							v,
 							moduleDocsFolder,
-							createFile
+							createFile,
+							moduleName
 						);
 					} else {
 						if (
 							v.declarations[0].type === 'class' ||
 							v.declarations[0].type === 'interface'
 						) {
-							return await processClasslike(moduleDocsFolder, v, createFile);
+							return await processClasslike(
+								moduleDocsFolder,
+								v,
+								createFile,
+								moduleName
+							);
 						}
 						return undefined;
 

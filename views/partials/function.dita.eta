@@ -14,7 +14,7 @@ if (it.declaration.name)
 %>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
-<reference>
+<reference id="<%=it.id%>">
     <title><codeph><%=signature%>
 <% ~ includeFile('type-params', {typeParameters: it.declaration.typeParameters}) %>
 <%= it.declaration.isGenerator ? '*' : '' %>
@@ -42,7 +42,7 @@ if (it.declaration.name)
                 <propdeschd>Description</propdeschd>
             </prophead>
             <%
-            it.declaration.parameters.forEach(function (param, index) { %>
+            it.declaration.parameters.forEach(function (param) { %>
                 <property>
                     <proptype>
                         <codeph>

@@ -16,7 +16,7 @@ signature += `: ${it.declaration.type || 'any'}`
 %>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
-<reference>
+<reference id="<%=it.id%>">
     <title><codeph><%=signature%></codeph></title>
     <prolog>
         <author type="creator">fliegdoc DITA Theme</author>
