@@ -21,7 +21,7 @@
 		"url": "https://github.com/fliegwerk/fliegdoc-dita-theme/issues"
 	},
 	"files": [
-		"src",
+		"views",
 		"dist",
 		"README.md"
 	],
