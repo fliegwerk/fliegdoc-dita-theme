@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "esnext",
+		"sourceMap": true,
+		"checkJs": true,
+		"allowJs": true,
+		"esModuleInterop": true,
+		"moduleResolution": "Node"
+	},
+	"include": ["node_modules/fliegdoc"]
+}

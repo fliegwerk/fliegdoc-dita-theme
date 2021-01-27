@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+    <title><codeph><%=it.declaration.type%> <%=it.declaration.name%></codeph></title>
+    <topicmeta>
+        <author type="creator">fliegdoc DITA Theme</author>
+    </topicmeta>
+    <topicref href="intro.dita">
+        <% if (it.declaration.type === 'class' && it.constructors.length) {%>
+        <topichead navtitle="Constructors">
+            <% it.constructors.forEach(ctor => { %>
+            <<%~ctor.type%>ref href="<%~ctor.url%>"/>
+            <% }) %>
+        </topichead>
+        <% } %>
+        <% if (it.properties.length) { %>
+        <topichead navtitle="Properties">
+            <% it.properties.forEach(property => { %>
+            <<%~property.type%>ref href="<%~property.url%>"/>
+            <% }) %>
+        </topichead>
+        <% } %>
+        <% if (it.methods.length) { %>
+        <topichead navtitle="Methods">
+            <% it.methods.forEach(method => { %>
+            <<%~method.type%>ref href="<%~method.url%>"/>
+            <% }) %>
+        </topichead>
+        <% } %>
+    </topicref>
+</map>

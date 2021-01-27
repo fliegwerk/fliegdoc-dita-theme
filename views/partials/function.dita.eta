@@ -1,0 +1,84 @@
+<%
+let signature = '';
+if (it.declaration.scope)
+    signature += `${it.declaration.scope} `;
+if (it.declaration.isStatic)
+    signature += 'static ';
+if (it.declaration.isAbstract)
+    signature += 'abstract '
+if (it.declaration.isAsync)
+    signature += 'async '
+signature += 'function '
+if (it.declaration.name)
+    signature += `${it.declaration.name}`
+%>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference>
+    <title><codeph><%=signature%>
+<% ~ includeFile('type-params', {typeParameters: it.declaration.typeParameters}) %>
+<%= it.declaration.isGenerator ? '*' : '' %>
+(<%= it.declaration.parameters.map(v => v.name).join(', ')%>)
+        </codeph></title>
+    <prolog>
+        <author type="creator">fliegdoc DITA Theme</author>
+        <critdates>
+            <created date="2021-01-25"/>
+        </critdates>
+    </prolog>
+    <refbody>
+        <section>
+            <title>Description</title>
+            <%~ it.description %>
+        </section>
+        <% if (it.declaration.parameters.length > 0) {%>
+            <section>
+            <title>Parameters</title>
+        </section>
+        <properties id="properties_xqy_4wd_l4b">
+            <prophead>
+                <proptypehd>Name</proptypehd>
+                <propvaluehd>Type</propvaluehd>
+                <propdeschd>Description</propdeschd>
+            </prophead>
+            <%
+            it.declaration.parameters.forEach(function (param, index) { %>
+                <property>
+                    <proptype>
+                        <codeph>
+                            <%= param.isReadonly ? 'readonly' : '' %>
+                            <%= param.isRestParameter ? '...' : '' %>
+
+                            <!-- parameter name -->
+                            <%= param.name %>
+
+                            <%= param.hasQuestionToken ? '?' : '' %>
+                            <!-- Default value -->
+                            <% if (param.initializer) { %>
+                                = <%= param.initializer %>
+                            <% } %>
+                        </codeph>
+                    </proptype>
+                    <propvalue>
+                        <codeph>
+                            <%= param.type %>
+                        </codeph>
+                    </propvalue>
+                    <propdesc><%~ param.description || 'No docs provided' %></propdesc>
+
+                </property>
+            <% }) %>
+        </properties>
+        <%}%>
+        <section>
+            <title>Return value</title>
+            <codeblock><%= it.declaration.returnType || 'any' %></codeblock>
+            <%~it.declaration.returnDescription || '' %>
+        </section>
+        <%~includeFile('doc-tags', {docTags: it.docTags})%>
+<!--        <section>
+            <title>Raw DEBUG output</title>
+            <codeblock><%=JSON.stringify(it.declaration, null, 2)%></codeblock>
+        </section>-->
+    </refbody>
+</reference>

@@ -1,0 +1,9 @@
+# don't use CRLF line endings
+* text eol=lf
+
+# binaries
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary

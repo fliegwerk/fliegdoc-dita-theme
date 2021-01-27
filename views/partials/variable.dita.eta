@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference>
+    <title><codeph><%=it.declaration.declarationKind%> <%= it.declaration.declarations[0].name %> : <%= it.declaration.declarations[0].type %></codeph></title>
+    <prolog>
+        <author type="creator">fliegdoc DITA Theme</author>
+    </prolog>
+    <refbody>
+        <section>
+            <title>Description</title>
+            <%~ it.description %>
+        </section>
+        <%~includeFile('doc-tags', {docTags: it.docTags})%>
+        <!--        <section>-->
+<!--            <title>Raw DEBUG output</title>-->
+<!--            <codeblock><%=JSON.stringify(it.declaration, null, 2)%></codeblock>-->
+<!--        </section>-->
+    </refbody>
+</reference>

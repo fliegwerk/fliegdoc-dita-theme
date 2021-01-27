@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+    <title>API Reference</title>
+    <topicmeta>
+        <author type="contributor">Pablo Klaschka</author>
+        <critdates>
+            <!--Pablo Klaschka-->
+            <revised modified="2021-01-25"/>
+        </critdates>
+    </topicmeta>
+    <topicref href="./intro.dita"/>
+    <% it.modules.forEach(name => { %>
+    <mapref href="./modules/<% ~name %>/index.ditamap"/>
+    <% }) %>
+</map>

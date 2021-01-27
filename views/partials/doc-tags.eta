@@ -1,0 +1,20 @@
+<%
+const translationLUT = {
+    '@param': 'Parameter',
+    '@throws': 'Throws',
+    '@see': 'See also',
+    '@example': 'Example',
+    '@private': false,
+    '@public': false,
+    '@protected': false,
+    '@constructor': false
+}
+it.docTags.forEach(tag => {
+if (translationLUT[tag.tagName.trim()] !== false) {
+%>
+<section>
+    <title><%= translationLUT[tag.tagName.trim()] || tag.tagName.trim() %></title>
+    <%~tag.text%>
+</section>
+<% }
+}); %>

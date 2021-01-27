@@ -1,0 +1,58 @@
+{
+	"name": "@fliegwerk/fliegdoc-dita-theme",
+	"version": "0.0.0",
+	"description": "A DITA API Reference generator theme for fliegdoc",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"test": "npm run build && fliegdoc build && npm run build:docs",
+		"style": "prettier --write package.json '**/*{.ts,.tsx,.js,.jsx,.json,.html,.css,.scss,.sass,.yaml,.yml,.md}'",
+		"style:ci": "prettier --list-different package.json '**/*{.ts,.tsx,.js,.jsx,.json,.html,.css,.scss,.sass,.yaml,.yml,.md}'",
+		"build:docs": "dita -i docs/index.ditamap -f pdf2",
+		"prepare": "npm run style && npm run build",
+		"release": "standard-version"
+	},
+	"repository": {
+		"url": "git+https://github.com/fliegwerk/fliegdoc-dita-theme.git",
+		"type": "git"
+	},
+	"bugs": {
+		"url": "https://github.com/fliegwerk/fliegdoc-dita-theme/issues"
+	},
+	"files": [
+		"src",
+		"dist",
+		"README.md"
+	],
+	"husky": {
+		"hooks": {
+			"pre-commit": "pretty-quick --staged"
+		}
+	},
+	"keywords": [
+		"fliegdoc",
+		"fliegdoc-theme",
+		"dita"
+	],
+	"author": {
+		"url": "https://github.com/pklaschka",
+		"name": "Pablo Klaschka",
+		"email": "contact@pabloklaschka.de"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^14.14.22",
+		"fliegdoc": "^0.4.5",
+		"husky": "^4.3.8",
+		"prettier": "^2.2.1",
+		"pretty-quick": "^3.1.0",
+		"standard-version": "^9.1.0"
+	},
+	"dependencies": {
+		"eta": "^1.12.1"
+	},
+	"peerDependencies": {
+		"fliegdoc": ">=0.4.5"
+	}
+}

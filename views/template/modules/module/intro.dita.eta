@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic>
+    <title><codeph><%=it.moduleName%></codeph></title>
+    <prolog>
+        <author type="creator">Pablo Klaschka</author>
+        <critdates>
+            <created date="2021-01-25"/>
+        </critdates>
+    </prolog>
+    <body>
+        <p>Import members of this module
+            using<codeblock outputclass="language-javascript">import { <varname>member-name</varname> } from '<%=it.moduleName%>';</codeblock></p>
+    </body>
+</topic>

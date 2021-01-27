@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="intro">
+    <title><codeph><% it.declaration.declarations[0].isAbstract ? 'abstract ' : '' %><%= it.declaration.type %> <!-- Name --> <%= it.declaration.name %></codeph>
+
+    </title>
+    <shortdesc>
+        <codeblock><%=it.signature%></codeblock>
+    </shortdesc>
+    <prolog>
+        <author type="creator">fliegdoc DITA Theme</author>
+    </prolog>
+    <refbody>
+        <section>
+            <title>Description</title>
+            <%~ it.description %>
+        </section>
+        <%~includeFile('/partials/doc-tags', {docTags: it.docTags})%>
+        <!--        <section>-->
+<!--            <title>Raw DEBUG output</title>-->
+<!--            <codeblock><%= JSON.stringify(it.declaration, null, 2) %></codeblock>-->
+<!--        </section>-->
+    </refbody>
+</reference>

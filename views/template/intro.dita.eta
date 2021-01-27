@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="api_reference_intro">
+    <title>API Reference Intro</title>
+    <prolog>
+        <author type="creator">fliegdoc DITA Theme</author>
+        <critdates>
+            <created date="2021-01-25"/>
+        </critdates>
+    </prolog>
+    <body>
+        <p>This reference was automatically generated using the fliegdoc generator.</p>
+    </body>
+</topic>
