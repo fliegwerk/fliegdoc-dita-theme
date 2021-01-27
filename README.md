@@ -20,9 +20,9 @@ In your `fliegdoc.config.js` (or other applicable config file names for fliegdoc
 const { FliegdocDITATheme } = require('@fliegwerk/fliegdoc-dita-theme');
 
 module.exports = {
-    // [...]
-    theme: FliegdocDITATheme
-}
+	// [...]
+	theme: FliegdocDITATheme
+};
 ```
 
 ## Author
