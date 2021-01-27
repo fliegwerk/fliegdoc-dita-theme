@@ -1,6 +1,6 @@
 # Welcome to @fliegwerk/fliegdoc-dita-theme 👋
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Twitter: pklaschka2000](https://img.shields.io/twitter/follow/pklaschka2000.svg?style=social)](https://twitter.com/pklaschka2000)
 
 > A DITA API Reference generator theme for [fliegdoc](https://github.com/fliegwerk/fliegdoc)
@@ -13,7 +13,17 @@ npm install --save-dev @fliegwerk/fliegdoc-dita-theme
 
 ## Usage
 
-In your `fliegdoc.config.js` (or other applicable config file names for fliegdoc)
+In your `fliegdoc.config.js` (or other applicable config file names for fliegdoc), set `theme` to `FliegdocDITATheme`:
+
+```js
+// fliegdoc.config.js
+const { FliegdocDITATheme } = require('@fliegwerk/fliegdoc-dita-theme');
+
+module.exports = {
+    // [...]
+    theme: FliegdocDITATheme
+}
+```
 
 ## Author
 
