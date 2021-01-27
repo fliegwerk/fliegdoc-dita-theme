@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Documentation processor should correctly process test case #0 1`] = `
+"<p>
+<codeblock outputClass=\\"language-s\\">An example text
+
+With two newlines</codeblock>
+</p>"
+`;
+
+exports[`Documentation processor should correctly process test case #0 2`] = `
+"<p>
+<codeblock outputClass=\\"language-s\\">An example text
+
+With two newlines</codeblock></p><p>And two paragraphs</p><p>outside the code
+</p>"
+`;
