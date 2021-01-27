@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/fliegwerk/fliegdoc-dita-theme/compare/v0.0.4...v0.0.5) (2021-01-27)
+
+### Bug Fixes
+
+- Fix replaced Markdown characters within code blocks ([67159af](https://github.com/fliegwerk/fliegdoc-dita-theme/commit/67159af3408ea877c11bb163ccd9830a6c34c0be))
+
 ### [0.0.4](https://github.com/fliegwerk/fliegdoc-dita-theme/compare/v0.0.3...v0.0.4) (2021-01-27)
 
 ### Bug Fixes
