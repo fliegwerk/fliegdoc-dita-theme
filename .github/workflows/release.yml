@@ -24,7 +24,7 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          body: 'cf. [CHANGELOG.md](https://github.com/fliegwerk/fliegdoc/blob/master/CHANGELOG.md)'
+          body: 'cf. [CHANGELOG.md](https://github.com/fliegwerk/fliegdoc-dita-theme/blob/master/CHANGELOG.md)'
 
   publish-npm:
     needs: build
