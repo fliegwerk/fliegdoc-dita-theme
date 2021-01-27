@@ -147,6 +147,6 @@ export async function processClasslike(
 
 	return {
 		type: 'map',
-		url: mapPath
+		url: path.join('./', 'members', declaration.name, 'index.ditamap')
 	};
 }
