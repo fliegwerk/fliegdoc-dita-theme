@@ -1,6 +1,6 @@
 {
 	"name": "@fliegwerk/fliegdoc-dita-theme",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "A DITA API Reference generator theme for fliegdoc",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
