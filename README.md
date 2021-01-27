@@ -1,6 +1,6 @@
 # Welcome to @fliegwerk/fliegdoc-dita-theme 👋
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/fliegwerk/fliegdoc-dita-theme/blob/main/LICENSE)
 [![Twitter: pklaschka2000](https://img.shields.io/twitter/follow/pklaschka2000.svg?style=social)](https://twitter.com/pklaschka2000)
 
 > A DITA API Reference generator theme for [fliegdoc](https://github.com/fliegwerk/fliegdoc)
