@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/fliegwerk/fliegdoc-dita-theme/compare/v0.0.3...v0.0.4) (2021-01-27)
+
+### Bug Fixes
+
+- Fix generation of absolute links in module maps for classes and interfaces ([5055ae1](https://github.com/fliegwerk/fliegdoc-dita-theme/commit/5055ae12fadea1b7ae4da0d01822e8f6c0211510))
+
 ### [0.0.3](https://github.com/fliegwerk/fliegdoc-dita-theme/compare/v0.0.2...v0.0.3) (2021-01-27)
 
 ### Bug Fixes
