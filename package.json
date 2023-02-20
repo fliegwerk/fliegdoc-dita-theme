@@ -45,7 +45,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@types/jest": "^27.0.1",
-		"@types/node": "^16.7.10",
+		"@types/node": "^18.14.0",
 		"fliegdoc": "^0.5.1",
 		"husky": "^7.0.2",
 		"jest": "^26.6.3",
